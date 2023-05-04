@@ -23,7 +23,7 @@ namespace Chemist.Services
             return sum;
         }
 
-        private decimal GetToppingPrice(List<string> toppings)
+        public decimal GetToppingPrice(List<string> toppings)
         {
             if (toppings == null)
             {

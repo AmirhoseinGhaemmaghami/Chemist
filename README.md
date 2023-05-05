@@ -37,7 +37,7 @@ Use the Swagger UI to test the API endpoints and ensure that they are working co
         ]
     }
 ]
-
+```
 
 ## Documentation
 - In this project I made use of Abstract Factory design pattern because making of the Pizzerias with different menus is a varying part of the code, so I ecnapsulated it. By inheriting `IPizzeriaFactory`, changing menus or adding any other pizzerias is made easy as it would be done only by an inheritance of this interface and registering the new implementation to DI(IOC) container. (So the code is open for extension and close to modification)

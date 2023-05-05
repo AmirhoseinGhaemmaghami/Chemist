@@ -19,6 +19,25 @@ Features
 6. Run `dotnet run --project ./Chemist.Api` to start the application.
 7. Open a web browser and navigate to the Swagger UI URL, which is located at https://localhost:<port>/swagger/index.html, where <port> is the port number specified in the application runnig. This will display the Swagger UI page, where you can interact with the API.
 Use the Swagger UI to test the API endpoints and ensure that they are working correctly. You can also use a tool like Postman to test the API endpoints outside of the Swagger UI.
+8. You can use this as a sample input with location = "Southbank" that gets 69 as an output
+```json
+[
+    {
+        "name": "Capricciosa",
+        "count": 2,
+        "toppings": [
+            "Cheese",
+            "Salami"
+        ]
+    },
+    {
+        "name": "Vegetarian",
+        "count": 1,
+        "toppings": [
+        ]
+    }
+]
+
 
 ## Documentation
 - In this project I made use of Abstract Factory design pattern because making of the Pizzerias with different menus is a varying part of the code, so I ecnapsulated it. By inheriting `IPizzeriaFactory`, changing menus or adding any other pizzerias is made easy as it would be done only by an inheritance of this interface and registering the new implementation to DI(IOC) container. (So the code is open for extension and close to modification)

@@ -7,11 +7,11 @@ namespace Chemist.Services
     {
         public Pizzeria CreatePizzeria(string location)
         {
-            switch (location)
+            switch (location.ToUpper())
             {
-                case "Preston":
+                case "PRESTON":
                     return CreatePrestonPizzeria();
-                case "Southbank":
+                case "SOUTHBANK":
                     return CreateSouthbankPizzeria();
                 default:
                     throw new Exception("Unkonow pizzeria");

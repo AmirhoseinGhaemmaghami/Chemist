@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Chemist.Api.Dto;
+using Chemist.Api.Helpers;
 using Chemist.Domain.Interfaces;
 using Chemist.Domain.Models.Inputs;
 using Microsoft.AspNetCore.Mvc;
@@ -25,10 +26,19 @@ namespace Chemist.Api.Controllers
         }
 
         [HttpPost("{location}")]
+        [ProducesResponseType(typeof(decimal), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         public ActionResult<decimal> GetTotalPrice(string location, List<PizzaInputDto> pizzaInputs)
         {
-            var pizzeria = this.pizzeriaFactory.CreatePizzeria(location);
-            return this.priceService.GetTotal(mapper.Map<List<PizzaInput>>(pizzaInputs), pizzeria);
+            try
+            {
+                var pizzeria = this.pizzeriaFactory.CreatePizzeria(location);
+                return ApiResponse.Ok(this.priceService.GetTotal(mapper.Map<List<PizzaInput>>(pizzaInputs), pizzeria));
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse.BadRequest(ex.Message);
+            }
         }
     }
 }

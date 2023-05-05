@@ -2,8 +2,6 @@
 
 This program is a .Net Web Api that calculates the total price of an order based on the location of the customer and the number of pizzas they have ordered.
 
-Features
-
 ## Table of Contents
 
 - [Installation](#installation)

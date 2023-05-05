@@ -18,7 +18,7 @@ namespace Chemist.Services
             {
                 var pizzaPrice = GetPizzaPrice(pizzeria, pizza.Name);
                 var ToppingPrice = GetToppingPrice(pizza.Toppings);
-                sum += (pizzaPrice + ToppingPrice);
+                sum += (pizzaPrice * pizza.Count + ToppingPrice);
             }
             return sum;
         }

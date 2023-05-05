@@ -144,8 +144,8 @@ namespace Chemist.Services.Tests
             // Arrange
             var pizzaInputs = new List<PizzaInput>
         {
-            new PizzaInput { Name = "Margherita", Toppings = new List<string> { "Cheese" } },
-            new PizzaInput { Name = "Pepperoni", Toppings = new List<string> { "Cheese", "Capsicum" } }
+            new PizzaInput { Name = "Margherita", Toppings = new List<string> { "Cheese" }, Count=1 },
+            new PizzaInput { Name = "Pepperoni", Toppings = new List<string> { "Cheese", "Capsicum" }, Count=1 }
         };
             var pizzeria = new Pizzeria
             {
